@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Todo</string>
+    <string name="todo_list">TODO List</string>
+    <string name="add_todo">Add TODO</string>
+    <string name="enter_new_item">Enter new item</string>
+    <string name="error_message">Failed to add TODO</string>
+    <string name="dismiss">Dismiss</string>
+    <string name="empty_todo_list">Press the + button to add a TODO item</string>
+    <string name="search_query">Search query</string>
+</resources>
