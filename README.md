@@ -25,7 +25,7 @@ This is a simple TODO app built with Jetpack Compose for Android.
 
 ## Getting Started
 
-1.  Clone the repository: `git clone <repository_url>`
+1.  Clone the repository: `git clone https://github.com/rtippisetty/Todo.git`
 2.  Open the project in Android Studio
 3.  Build and run the app on an emulator or device
 
