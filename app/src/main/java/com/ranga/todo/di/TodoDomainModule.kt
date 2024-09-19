@@ -1,9 +1,9 @@
 package com.ranga.todo.di
 
 import com.ranga.todo.api.GetTodoItemsUseCase
-import com.ranga.todo.api.SaveTodoItemUseCase
+import com.ranga.todo.api.AddTodoItemUseCase
 import com.ranga.todo.domain.GetTodoItemsUseCaseImpl
-import com.ranga.todo.domain.SaveTodoItemUseCaseImpl
+import com.ranga.todo.domain.AddTodoItemUseCaseImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -16,6 +16,6 @@ interface TodoDomainModule {
     fun bindGetTodoItemsUseCase(impl: GetTodoItemsUseCaseImpl): GetTodoItemsUseCase
 
     @Binds
-    fun bindSaveTodoItemUseCase(impl: SaveTodoItemUseCaseImpl): SaveTodoItemUseCase
+    fun bindSaveTodoItemUseCase(impl: AddTodoItemUseCaseImpl): AddTodoItemUseCase
 
 }

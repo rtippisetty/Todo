@@ -12,7 +12,7 @@ import org.junit.Test
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.assertThrows
 
-class GetTodoItemsUseCaseImplTest {
+class GetTodoItemsUseCaseImplTestEntity {
 
     private lateinit var getTodoItemsUseCase: GetTodoItemsUseCase
     private val todoRepository: TodoRepository = mockk(relaxed = true)
@@ -26,7 +26,7 @@ class GetTodoItemsUseCaseImplTest {
     fun `Given todoRepository returns Todo list, When items invoked Then it should returns the same list`() =
         runTest {
             // Given
-            val expectedTodos = listOf(Todo("Task 1"), Todo("Task 2"))
+            val expectedTodos = listOf(Todo("1", "Task 1", false), Todo("2","Task 2", false))
             coEvery { todoRepository.getItems() } returns flowOf(expectedTodos)
 
             // When

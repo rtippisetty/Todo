@@ -38,7 +38,7 @@ class HomeViewModelTest {
     fun `Given getTodoItemsUseCase returns Todo list When viewModel is initialized Then homeState should be Success`() =
         runTest {
             // Given
-            val expectedTodos = listOf(Todo("Task 1"), Todo("Task 2"))
+            val expectedTodos = listOf(Todo("1","Task 1", false), Todo("2","Task 2", false))
             coEvery { getTodoItemsUseCase.items() } returns flowOf(
                 expectedTodos
             )
@@ -77,7 +77,7 @@ class HomeViewModelTest {
     fun `Given getTodoItemsUseCase returns Todo list When searchQuery is updated Then homeState should be have filtered list`() =
         runTest {
             // Given
-            val expectedTodos = listOf(Todo("Task 1"), Todo("Task 2"))
+            val expectedTodos = listOf(Todo("1","Task 1", false), Todo("2","Task 2", false))
             coEvery { getTodoItemsUseCase.items() } returns flowOf(
                 expectedTodos
             )
@@ -97,7 +97,7 @@ class HomeViewModelTest {
     fun `Given getTodoItemsUseCase returns Todo list When searchQuery is updated And getTodoItemsUseCase fails Then homeState should show error`() =
         runTest {
             // Given
-            val expectedTodos = listOf(Todo("Task 1"), Todo("Task 2"))
+            val expectedTodos = listOf(Todo("1","Task 1", false), Todo("2","Task 2", false))
             coEvery { getTodoItemsUseCase.items() } returns flowOf(
                 expectedTodos
             )

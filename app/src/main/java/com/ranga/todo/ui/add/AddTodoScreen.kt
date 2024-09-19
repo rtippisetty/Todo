@@ -44,7 +44,7 @@ fun AddTodoScreen(
         modifier = Modifier
             .fillMaxSize(),
         addItemState = uiState,
-        onSaveItem = viewModel::saveItem,
+        onSaveItem = viewModel::addItem,
         onNavigateToBack = onNavigateToBack,
         onSaveFiled = onNavigateToError,
         onSaveSuccess = onNavigateToBack

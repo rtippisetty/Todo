@@ -2,7 +2,8 @@ package com.ranga.todo.data
 
 import com.ranga.todo.api.model.Todo
 import com.ranga.todo.data.local.TodoDao
-import com.ranga.todo.data.local.TodoItem
+import com.ranga.todo.data.model.toDomain
+import com.ranga.todo.data.model.toEntity
 import com.ranga.todo.domain.TodoRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
@@ -12,11 +13,11 @@ class TodoRepositoryImpl @Inject constructor (private val todoDao: TodoDao) : To
 
     override fun getItems(): Flow<List<Todo>> {
         return todoDao.getAll().map { items ->
-            items.map { item -> Todo(item.title) }
+            items.map { it.toDomain() }
         }
     }
 
-    override suspend fun saveItem(todo: Todo) {
-        todoDao.insert(TodoItem(title = todo.title))
+    override suspend fun addItem(todo: Todo) {
+        todoDao.add(todo.toEntity())
     }
 }

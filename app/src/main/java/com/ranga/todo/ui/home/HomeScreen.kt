@@ -179,7 +179,7 @@ private fun TodoListScreenPreview(
 private class HomeStateProvider : PreviewParameterProvider<HomeState> {
     override val values = sequenceOf(
         HomeState.Loading,
-        HomeState.Success(items = listOf(Todo("Title 1"), Todo("Title 2"))),
+        HomeState.Success(items = listOf(Todo("1","Title 1", false), Todo("2","Title 2", false))),
         HomeState.Error("Error message")
     )
 }
